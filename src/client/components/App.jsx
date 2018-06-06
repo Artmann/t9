@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
+import { addInput, fetchSuggestions } from '../actions'
 import Keypad from './Keypad.jsx';
 import Display from './Display.jsx';
+import arrayEqual from '../utils/ArrayEqual';
 
 class App extends Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidUpdate(prevProps) {
+    const { dispatch, input } = this.props;
+
+    if (!arrayEqual(prevProps.input, input) && input.length > 0) {
+      dispatch(fetchSuggestions(input));
+    }
   }
 
   render() {

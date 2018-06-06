@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux'
-import { addInput, fetchSuggestions } from '../actions'
+import { addInput } from '../actions'
 import KeypadButton from './KeypadButton.jsx';
 
 class Keypad extends Component {
@@ -13,7 +13,6 @@ class Keypad extends Component {
     const { dispatch, input } = this.props;
     
     dispatch(addInput(i));
-    dispatch(fetchSuggestions(input));
   } 
 
   render() {
