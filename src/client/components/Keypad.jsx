@@ -17,7 +17,7 @@ class Keypad extends Component {
 
   render() {
     const buttons = [
-      { key: '1', text: '.,?' },
+      { key: '1', text: '' },
       { key: '2', text: 'abc' },
       { key: '3', text: 'def' },
       { key: '4', text: 'ghi' },
@@ -26,12 +26,12 @@ class Keypad extends Component {
       { key: '7', text: 'pqrs' },
       { key: '8', text: 'tuv' },
       { key: '9', text: 'wxyz' },
-      { key: '*', text: '+' },
+      { key: '*', text: '' },
       { key: '0', text: '_' },
       { key: '#', text: '' },
     ];
 
-    return <div>
+    return <div className="w-48 flex flex-wrap">
       {
         buttons.map(button => 
           <KeypadButton 

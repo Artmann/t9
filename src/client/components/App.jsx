@@ -22,7 +22,7 @@ class App extends Component {
   render() {
     const { input } = this.props;
     
-    return <div>
+    return <div className="container mx-auto py-8 flex flex-col items-center">
       <Display />
       <Keypad input={input} />
     </div>;
