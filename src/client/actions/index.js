@@ -3,6 +3,10 @@ export const addInput = input => ({
   input
 });
 
+export const removeInput = () => ({
+  type: 'REMOVE_INPUT'
+});
+
 export const requestSuggestions = () => ({
   type: 'REQUEST_SUGGESTIONS'
 });

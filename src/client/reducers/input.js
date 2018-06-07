@@ -5,6 +5,8 @@ const input = (state = [], action) => {
         ...state,
         action.input
       ];
+    case 'REMOVE_INPUT':
+      return state.slice(0, -1);
   }
 
   return state;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux'
-import { addInput, nextSuggestion } from '../actions'
+import { addInput, nextSuggestion, removeInput } from '../actions'
 import KeypadButton from './KeypadButton.jsx';
 
 class Keypad extends Component {
@@ -26,9 +26,9 @@ class Keypad extends Component {
       { key: '7', text: 'pqrs', handler: handleClick },
       { key: '8', text: 'tuv', handler: handleClick },
       { key: '9', text: 'wxyz', handler: handleClick },
-      { key: '*', text: 'Next', handler: () => dispatch(nextSuggestion()) },
+      { key: '', text: 'Next', handler: () => dispatch(nextSuggestion()) },
       { key: '0', text: '', handler: () => {} },
-      { key: '#', text: '', handler: () => {} },
+      { key: '', text: 'Undo', handler: () => { dispatch(removeInput()) } },
     ];
 
     return <div className="w-48 flex flex-wrap">

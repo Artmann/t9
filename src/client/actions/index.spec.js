@@ -7,6 +7,12 @@ describe('input actions', () => {
       input: 4
     });
   });
+
+  it('removeInput should create REMOVE_INPUT action', () => {
+    expect(actions.removeInput()).toEqual({
+      type: 'REMOVE_INPUT'
+    });
+  });
 });
 
 describe('suggestion actions', () => {
