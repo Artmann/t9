@@ -20,10 +20,10 @@ class App extends Component {
   }
 
   render() {
-    const { input } = this.props;
-    
+    const { input, suggestions } = this.props;
+
     return <div className="container mx-auto py-8 flex flex-col items-center">
-      <Display />
+      <Display input={input} suggestions={suggestions} />
       <Keypad input={input} />
     </div>;
   }
