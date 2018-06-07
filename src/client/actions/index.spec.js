@@ -10,7 +10,6 @@ describe('input actions', () => {
 });
 
 describe('suggestion actions', () => {
-  // requestSuggestions receiveSuggestions
   it('requestSuggestions should create REQUEST_SUGGESTIONS action', () => {
     expect(actions.requestSuggestions()).toEqual({
       type: 'REQUEST_SUGGESTIONS'
@@ -22,5 +21,9 @@ describe('suggestion actions', () => {
       type: 'RECEIVE_SUGGESTIONS',
       suggestions: ['a', 'b', 'c']
     });
+  });
+
+  it('nextSuggestion should create NEXT_SUGGESTION action', () => {
+    expect(actions.nextSuggestion()).toEqual({ type: 'NEXT_SUGGESTION' });
   });
 });

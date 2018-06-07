@@ -1,44 +1,44 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux'
-import { addInput } from '../actions'
+import { addInput, nextSuggestion } from '../actions'
 import KeypadButton from './KeypadButton.jsx';
 
 class Keypad extends Component {
   constructor(props) {
     super(props);
   }
-  
-  handleClick(i) {
-    const { dispatch, input } = this.props;
-    
-    dispatch(addInput(i));
-  } 
 
   render() {
+    const { dispatch } = this.props;
+
+    const handleClick = (i) =>  {
+      dispatch(addInput(i));
+    };
+
     const buttons = [
       { key: '1', text: '' },
-      { key: '2', text: 'abc' },
-      { key: '3', text: 'def' },
-      { key: '4', text: 'ghi' },
-      { key: '5', text: 'jkl' },
-      { key: '6', text: 'mno' },
-      { key: '7', text: 'pqrs' },
-      { key: '8', text: 'tuv' },
-      { key: '9', text: 'wxyz' },
-      { key: '*', text: '' },
-      { key: '0', text: '_' },
-      { key: '#', text: '' },
+      { key: '2', text: 'abc', handler: handleClick },
+      { key: '3', text: 'def', handler: handleClick },
+      { key: '4', text: 'ghi', handler: handleClick },
+      { key: '5', text: 'jkl', handler: handleClick },
+      { key: '6', text: 'mno', handler: handleClick },
+      { key: '7', text: 'pqrs', handler: handleClick },
+      { key: '8', text: 'tuv', handler: handleClick },
+      { key: '9', text: 'wxyz', handler: handleClick },
+      { key: '*', text: 'Next', handler: () => dispatch(nextSuggestion()) },
+      { key: '0', text: '', handler: () => {} },
+      { key: '#', text: '', handler: () => {} },
     ];
 
     return <div className="w-48 flex flex-wrap">
       {
-        buttons.map(button => 
-          <KeypadButton 
+        buttons.map(button =>
+          <KeypadButton
             key={button.key}
             input={button.key}
             text={button.text}
-            onClick={ this.handleClick.bind(this) } />
+            onClick={ button.handler } />
         )
       }
     </div>;

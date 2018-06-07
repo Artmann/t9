@@ -1,13 +1,13 @@
 const input = (state = [], action) => {
-    switch(action.type) {
-        case 'ADD_INPUT':
-            return [
-                ...state,
-                action.input
-            ];
-    }
+  switch(action.type) {
+    case 'ADD_INPUT':
+      return [
+        ...state,
+        action.input
+      ];
+  }
 
-    return state;
+  return state;
 };
 
 export default input;

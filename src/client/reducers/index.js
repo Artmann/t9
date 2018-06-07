@@ -3,6 +3,6 @@ import input from './input';
 import suggestions from './suggestions';
 
 export default combineReducers({
-    input,
-    suggestions
+  input,
+  suggestions
 });

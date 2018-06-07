@@ -21,3 +21,7 @@ export function fetchSuggestions(input) {
       .then(json => dispatch(receiveSuggestions(json)));
   };
 }
+
+export const nextSuggestion = () => ({
+  type: 'NEXT_SUGGESTION'
+});
