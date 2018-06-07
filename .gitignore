@@ -2,3 +2,5 @@ node_modules
 public/build
 .DS_STORE
 coverage
+**/__snapshots__/
+
